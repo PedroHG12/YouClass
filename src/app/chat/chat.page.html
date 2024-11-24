@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>  <!-- Botão que abre o menu -->
+    </ion-buttons>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="chat-container">
+    <div *ngFor="let mensagem of mensagens" class="mensagem" [ngClass]="{'sent': mensagem.sent, 'received': !mensagem.sent}">
+      <p>{{ mensagem.remetente }}</p>
+      <p>{{ mensagem.text }}</p>
+      <span class="timestamp">{{ mensagem.timestamp }}</span>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <ion-item>
+      <ion-input 
+        placeholder="Digite uma mensagem..." 
+        [(ngModel)]="novaMensagem">
+      </ion-input>
+      <ion-button (click)="enviarMensagem()">
+        <ion-icon name="send"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+</ion-content>

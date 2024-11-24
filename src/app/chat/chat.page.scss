@@ -1,0 +1,81 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #ffffff; /* Fundo branco */
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mensagem {
+  max-width: 75%; /* Limita a largura das mensagens */
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mensagem p:first-child {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ff0000ce; /* Cor para o nome do remetente */
+  margin-bottom: 5px;
+}
+
+.mensagem p:last-child {
+  margin-bottom: 0;
+}
+
+.mensagem.sent {
+  background-color: #ff5252; /* Vermelho para mensagens enviadas */
+  color: #ffffff; /* Texto branco */
+  align-self: flex-end;
+}
+
+.mensagem.received {
+  background-color: #f0f0f0; /* Fundo cinza claro para mensagens recebidas */
+  color: #333; /* Texto preto */
+  align-self: flex-start;
+}
+
+.timestamp {
+  font-size: 10px;
+  color: #999; /* Cinza claro para o horário */
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+}
+
+.input-container {
+  display: flex;
+  padding: 10px;
+  background-color: #ff5252; /* Fundo vermelho */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+ion-item {
+  --background: transparent;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+ion-input {
+  --placeholder-color: #ffffff;
+  color: #ffffff;
+}
+
+ion-button {
+  --background: #ffffff; /* Botão branco */
+  --color: #ff5252; /* Ícone vermelho */
+  margin-left: 10px;
+  border-radius: 50%;
+  padding: 8px;
+}
